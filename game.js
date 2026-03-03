@@ -438,11 +438,14 @@ function renderList(containerSel, items){
 ======================= */
 function showDialogue(){
   speakerEl.style.display = '';
-  choicesHomeEl.hidden = true;
   dialogueViewEl.hidden = false;
+
+  choicesHomeEl.classList.add('choicesHome--inactive');
+  choicesHomeEl.style.opacity = "0.2";
 }
 
 function hideDialogue(){
+  choicesHomeEl.classList.remove('choicesHome--inactive');
   choicesHomeEl.style.opacity = "1";
   dialogueViewEl.hidden = true;
   choicesHomeEl.hidden = false;

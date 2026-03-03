@@ -541,3 +541,7 @@ body{
   max-height:48vh;
   overflow:auto;
 }
+
+.choicesHome--inactive{
+  pointer-events: none;
+}
