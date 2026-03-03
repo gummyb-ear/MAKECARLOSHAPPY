@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MAKE CARLOS HAPPY</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main id="app">
+
+    <!-- START -->
+    <section class="screen screen--active" data-screen="start" aria-label="Start Screen">
+      <div class="startWrap">
+        <h1 class="title js-home">MAKE CARLOS HAPPY</h1>
+
+        <button class="btn btn--primary btn--bounce" id="btnStart" type="button">
+          START GAME
+        </button>
+
+        <p class="hint">
+          데스크탑 환경에서 플레이해주세요. <br />
+          생일 축하드려요! 늘 놀아주셔서 감사합니다 *^^*
+        </p>
+
+        <footer class="footerRight">
+          251014 Happy Birthday <br />
+          ©Gecko
+        </footer>
+      </div>
+    </section>
+
+    <!-- STORY -->
+    <section class="screen" data-screen="story" aria-label="Story Screen">
+      <div class="storyWrap">
+        <h1 class="title js-home">MAKE CARLOS HAPPY</h1>
+
+        <div id="storyBox" class="storyBox" aria-live="polite"></div>
+
+        <div class="storyActions">
+          <button class="btn btn--primary btn--small" id="btnToGame" type="button" disabled>
+            언더보스의 사무실 &gt;
+          </button>
+        </div>
+
+        <footer class="footerRight">
+          251014 Happy Birthday <br />
+          ©Gecko
+        </footer>
+      </div>
+    </section>
+
+    <!-- GAME -->
+    <section class="screen" data-screen="game" aria-label="Game Screen">
+      <div class="gameWrap">
+        <h1 class="title js-home">MAKE CARLOS HAPPY</h1>
+
+        <header class="gameHeader">
+          <div id="barLabel" class="barLabel">HAPPINESS</div>
+
+          <div id="bar" class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0">
+            <div class="barSeg"><div class="barFill" data-seg="0"></div></div>
+            <div class="barSeg"><div class="barFill" data-seg="1"></div></div>
+            <div class="barSeg"><div class="barFill" data-seg="2"></div></div>
+          </div>
+        </header>
+
+        <section class="stage" aria-label="Stage">
+          <div id="stageFrame" class="stageFrame">
+            <img id="bg" class="bg" alt="" />
+            <img id="char" class="char" alt="Carlos" />
+            <img id="prop" class="prop" alt="" hidden />
+            <img id="prop2" class="prop prop--2" alt="" hidden />
+            <img id="prop3" class="prop prop--3" alt="" hidden />
+
+            <div id="popup" class="popup" hidden></div>
+          </div>
+        </section>
+
+        <!-- actions OR dialogue area -->
+        <section class="panel" aria-label="Panel">
+          <div id="choicesHome" class="choicesHome">
+
+            <!-- TABS -->
+            <div class="choiceTabs">
+                <button class="tabBtn tabBtn--active" data-tab="chat">CHAT</button>
+                <button class="tabBtn" data-tab="touch">TOUCH</button>
+                <button class="tabBtn" data-tab="action">ACTION</button>
+            </div>
+
+            <!-- TAB CONTENT -->
+            <div class="tabContent">
+
+                <div class="tabPanel tabPanel--active" data-panel="chat">
+                <div id="listChat" class="list"></div>
+                </div>
+
+                <div class="tabPanel" data-panel="touch">
+                <div id="listTouch" class="list"></div>
+                </div>
+
+                <div class="tabPanel" data-panel="action">
+                <div id="listAction" class="list"></div>
+                </div>
+
+            </div>
+
+          </div>
+    </section>
+    <!-- DIALOGUE VIEW -->
+          <div id="dialogueView" class="dialogueView" hidden>
+            <div class="dialogueText">
+              <div id="eyebrow" class="eyebrow"></div>
+              <div id="speaker" class="speaker">카를로스:</div>
+              <div id="dialogue" class="dialogue"></div>
+            </div>
+
+            <div class="dialogueRight">
+              <button id="btnContinue" class="chev" type="button" aria-label="Continue" hidden>
+                &raquo;&raquo;
+              </button>
+            </div>
+
+            <div id="subChoices" class="subChoices" hidden></div>
+          </div>
+
+        <footer class="footerRight footerRight--game">
+          251014 Happy Birthday <br />
+          ©Gecko
+        </footer>
+      </div>
+
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
